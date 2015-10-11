@@ -9,7 +9,7 @@ Subsequently, the body linear acceleration and angular velocity were derived in 
 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing freqBodyAcceleration-XYZ, freqBodyAccelerationJerk-XYZ, freqBodyGyroscope-XYZ, freqBodyAccelerationJerkMagnitude, freqBodyGyroscopeMagnitude, freqBodyGyroscopeJerkMagnitude.  
 
-## All measures recorded were then averaged (mean function) and aggregated per subject adn activity Type.
+## All measures recorded were then averaged (mean function) and aggregated per subject and activity type. The resulting summary is included in the tidydata.txt file
 
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
@@ -34,8 +34,8 @@ freqBodyGyroscopeJerkMagnitude
 
 The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-std(): Standard deviation
+mean(): Mean value of the measurement
+std(): Standard deviation of the measurement
 
 ## The complete list of variables of each subject/activity pair (row) is as follows:
 "timeBodyAcceleration-mean()-X"               "timeBodyAcceleration-mean()-Y"                 
