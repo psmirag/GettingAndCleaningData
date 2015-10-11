@@ -47,6 +47,7 @@ for (n in 1:length(columns)) {
         columns[n] <- gsub("std", "stdDev", columns[n])
         columns[n] <- gsub("Mag", "Magnitude", columns[n])
         columns[n] <- gsub("Acc", "Acceleration", columns[n])
+        columns[n] <- gsub("Gyro", "Gyroscope", columns[n])
         columns[n] <- gsub("BodyBody", "Body", columns[n])
 }
 names(UCIData) <- columns
