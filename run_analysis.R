@@ -1,6 +1,8 @@
 ### run_analysis.R
 
 # load required libraries
+
+
 require(data.table)
 
 # Load source data files
@@ -23,7 +25,7 @@ names(subjectTrain) <- "subject"
 names(subjectTest) <- "subject"
 
 # (2) Extracts only the measurements on the mean and standard deviation for each measurement. 
-mean_std_labels <- grep("(mean|std)", features$V2)
+mean_std_labels <- grep("(mean\\(|std)", features$V2)
 testSet <- testSet[, mean_std_labels]
 trainingSet <- trainingSet[, mean_std_labels]
 
@@ -50,6 +52,6 @@ names(UCIData) <- columns
 
 # (5) create a second, independent tidy data set with the average of each variable for each activity and each subject.
 UCIData$subject <- factor(UCIData$subject)
-tidyData <- aggregate(UCIData[,names(UCIData) != c('subject','activity')],by=list(subject = UCIData$subject,activity=UCIData$activity),mean)
+tidyData <- aggregate(UCIData[,names(UCIData) != c('subject','activity')],by=list(subject=UCIData$subject, activity=UCIData$activity), FUN=mean)
 write.table(tidyData,"tidydata.txt",row.name=FALSE)
 
