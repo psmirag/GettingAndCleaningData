@@ -23,7 +23,7 @@ names(subjectTrain) <- "subject"
 names(subjectTest) <- "subject"
 
 # (2) Extracts only the measurements on the mean and standard deviation for each measurement. 
-mean_std_labels <- grep("(mean|std|Mean)", features$V2)
+mean_std_labels <- grep("(mean|std)", features$V2)
 testSet <- testSet[, mean_std_labels]
 trainingSet <- trainingSet[, mean_std_labels]
 
