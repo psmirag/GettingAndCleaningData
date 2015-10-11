@@ -25,7 +25,7 @@ names(subjectTrain) <- "subject"
 names(subjectTest) <- "subject"
 
 # (2) Extracts only the measurements on the mean and standard deviation for each measurement. 
-mean_std_labels <- grep("(mean\\(|std)", features$V2)
+mean_std_labels <- grep("(mean\\(|std\\())", features$V2)
 testSet <- testSet[, mean_std_labels]
 trainingSet <- trainingSet[, mean_std_labels]
 
@@ -47,6 +47,7 @@ for (n in 1:length(columns)) {
         columns[n] <- gsub("std", "stdDev", columns[n])
         columns[n] <- gsub("Mag", "Magnitude", columns[n])
         columns[n] <- gsub("Acc", "Acceleration", columns[n])
+        columns[n] <- gsub("BodyBody", "Body", columns[n])
 }
 names(UCIData) <- columns
 
