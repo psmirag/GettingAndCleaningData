@@ -1,8 +1,6 @@
 ### run_analysis.R
 
 # load required libraries
-
-
 require(data.table)
 
 # Load source data files
